@@ -26,7 +26,7 @@ const middlewareConfig: MiddlewareConfig = {
     channelSecret: process.env.CHANNEL_SECRET || '',
 };
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 const limiter: RateLimitRequestHandler = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
@@ -45,7 +45,7 @@ app.use(express.json()); // To parse JSON bodies
 app.use(limiter);
 
 app.get(
-  '/test',
+  '/ping',
   async (_: Request, res: Response): Promise<Response> => {
     return res.status(200).json({
       status: 'success',
