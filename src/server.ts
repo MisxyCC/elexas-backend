@@ -26,7 +26,7 @@ const middlewareConfig: MiddlewareConfig = {
     channelSecret: process.env.CHANNEL_SECRET || '',
 };
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 
 const limiter: RateLimitRequestHandler = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
