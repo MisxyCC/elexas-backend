@@ -45,7 +45,7 @@ app.use(express.json()); // To parse JSON bodies
 app.use(limiter);
 
 app.get(
-  '/',
+  '/test',
   async (_: Request, res: Response): Promise<Response> => {
     return res.status(200).json({
       status: 'success',
